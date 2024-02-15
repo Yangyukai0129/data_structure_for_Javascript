@@ -22,4 +22,12 @@ function merge(arr1, arr2) {
     return results;
 }
 
-console.log(merge([4, 6, 35, 76], [6, 7, 99, 203]))
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr;
+    let mid = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
+
+console.log(mergeSort([10, 24, 76, 74]))
