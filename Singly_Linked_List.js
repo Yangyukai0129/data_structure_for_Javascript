@@ -104,7 +104,7 @@ class SingleLinedList {
         if (index === 0) return this.shift();
         let previousNode = this.get(index - 1);
         let removed = previousNode.next;
-        prev.next = removed.next;
+        previousNode.next = removed.next;
         this.length--;
         return removed;
     }
